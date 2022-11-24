@@ -88,7 +88,7 @@ int main()
         }
 
         letterEntered = guess[0];
-        printf("letterGuessed: %c",letterEntered);
+        printf("letterGuessed: %c\n",letterEntered);
 
         oldCorrect = numCorrect;
 
@@ -107,6 +107,7 @@ int main()
         if (oldCorrect == numCorrect){
             numLives--;
             printf("Désoler mauvaise réponse\n");
+            printf("Il vous reste %d vie\n", numLives);
 
             if (numLives == 0){
                 break;
@@ -143,11 +144,12 @@ int main()
             fclose(ptr);
         }
 
-        printf("Votre nouveaux mot est : %s", newWord);
+        printf("Votre nouveaux mot est : %s\n", newWord);
     } else if (choiceToCreateWord == 0){
         printf("À bientot ! \n");
         quit = 1;
     }
+    free(newWord);
     
     return 0;
 }
